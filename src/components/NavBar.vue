@@ -30,7 +30,18 @@
     <nav class="mobile-view">
       <div class="views">
         <div class="menu col-3">
-          <font-awesome-icon :icon="['fa', 'bars']" />
+          <div>
+            <button @click="menuButton()" class="social">
+              <a href="#">
+                <font-awesome-icon :icon="['fa', 'bars']" />
+              </a>
+            </button>
+            <button @click="close()" class="social-2">
+              <a href="#">
+                <font-awesome-icon :icon="['fa', 'times']" id="social" />
+              </a>
+            </button>
+          </div>
           <div class="mobile-menu">
             <input type="text" placeholder="Search or jump to..." />
             <ul class="">
@@ -59,9 +70,34 @@
 <script>
 export default {
   name: "NavBar",
-  data: (){
-
-  },
+  methods: {
+    menuButton() {
+      console.log("rrrr");
+      const links = document.querySelector(".mobile-menu");
+      const icon = document.querySelector(".social");
+      const icon2 = document.querySelector(".social-2");
+      let key = 1;
+      if (key === 1) {
+        key = 0;
+        console.log(key);
+        links.style.display = "block";
+        icon.style.display = "none";
+        icon2.style.display = "block";
+      }
+    },
+    close() {
+      const links = document.querySelector(".mobile-menu");
+      const icon = document.querySelector(".social");
+      const icon2 = document.querySelector(".social-2");
+      let key = 1;
+      if (key === 1) {
+        key = 0;
+        links.style.display = "none";
+        icon.style.display = "block";
+        icon2.style.display = "none";
+      }
+    }
+  }
 };
 </script>
 
@@ -127,6 +163,7 @@ input {
   color: #b3bcbd;
   padding-left: 8px;
   border-radius: 8px;
+  border: 1px solid rgb(87, 87, 87);
 }
 .col-6 {
   width: 15%;
@@ -153,6 +190,9 @@ input {
 }
 
 @media screen and (max-width: 745px) {
+  .social-2 {
+    display: none;
+  }
   .desktop-view {
     display: none;
   }
@@ -192,6 +232,7 @@ input {
     right: 0;
     height: 40vh;
     padding: 26px 40px 0 26px;
+    display: none;
   }
   .mobile-menu input {
     margin-bottom: 0;
