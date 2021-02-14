@@ -10,17 +10,52 @@
           <li><a href="#">Package</a></li>
         </ul>
       </div>
+      <div class="container-content">
+        <div class="left-side">
+          <Profile />
+        </div>
+        <div class="right-side">
+          <div class="top-right">
+            <div class="right-input">
+              <input type="text" placeholder="Find a repositories" />
+            </div>
+            <div class="top-left">
+              <button class="select1">
+                <select name="" id="">
+                  <option value="">Type: All</option>
+                </select>
+              </button>
+              <button class="select1">
+                <select name="" id="">
+                  <option value="">Language: All</option>
+                </select>
+              </button>
+              <button type="button" class="btn">New</button>
+            </div>
+          </div>
+          <div class="">
+            <CardPage />
+            <CardPage />
+            <CardPage />
+            <CardPage />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import NavBar from "./NavBar";
+import CardPage from "./CardPage";
+import Profile from "./Profile";
 export default {
   name: "HelloWorld",
   props: {},
   components: {
-    NavBar
+    NavBar,
+    CardPage,
+    Profile
   }
 };
 </script>
@@ -32,8 +67,8 @@ export default {
   height: 88.5vh;
 }
 .nav-pill {
-  height: 12vh;
-  border-bottom: 2px solid black;
+  height: 16vh;
+  border-bottom: 1px solid rgb(211, 211, 211);
 }
 ul {
   display: flex;
@@ -41,7 +76,7 @@ ul {
   padding: 0;
   justify-content: center;
   align-items: flex-end;
-  height: 12vh;
+  height: 16vh;
   width: 100%;
 }
 ul li {
@@ -50,11 +85,85 @@ ul li {
 }
 ul li a {
   text-decoration: none;
-  font-size: 18px;
-  color: rgb(68, 68, 68);
+  font-size: 14px;
+  color: rgb(46, 46, 46);
 }
 .active {
+  border-bottom: 2px solid rgb(243, 93, 39);
+}
+.active a {
   color: black;
-  border-bottom: 2px solid orangered;
+  font-weight: 600;
+}
+.container-content {
+  display: flex;
+  justify-content: start;
+  height: 72.3vh;
+}
+.left-side {
+  width: 30%;
+  height: 72.3vh;
+  text-align: center;
+}
+.right-side {
+  width: 66%;
+}
+.top-right {
+  height: 10vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 99%;
+  border-bottom: 1px solid rgb(212, 212, 212);
+}
+.top-left {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  justify-content: start;
+  padding-right: 5px;
+}
+.top-left .btn {
+  background: green;
+  height: 5vh;
+  padding: 0 20px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+.top-left select {
+  height: 5vh;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  outline: none;
+}
+.select1 {
+  height: 5vh;
+  background: none;
+  border: 1px solid rgb(185, 185, 185);
+  padding: 0 20px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.right-input {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  justify-content: center;
+  align-self: center;
+}
+input {
+  height: 5vh;
+  width: 90%;
+  border-radius: 8px;
+  border: 1px solid rgb(185, 185, 185);
+  outline: none;
+  padding-left: 6px;
+}
+button {
+  outline: none;
 }
 </style>
