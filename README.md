@@ -1,5 +1,7 @@
 # my-github-repo-page
 
+https://my-repo-page.netlify.app/
+
 ## Project setup
 ```
 npm install

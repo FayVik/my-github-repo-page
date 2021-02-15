@@ -10,7 +10,7 @@
         <h2>Favour vivian woka</h2>
         <span>FayVik </span>
         <p>I am a Full Stack Developer</p>
-        <button>Edit Profile</button>
+        <button><a href="#">Edit Profile </a></button>
       </div>
     </div>
   </div>
@@ -21,9 +21,6 @@ export default {};
 </script>
 
 <style scoped>
-.container {
-  /* text-align: center; */
-}
 .img-container {
   min-height: 30vh;
   margin-top: -15%;
@@ -48,5 +45,9 @@ button {
 .profile-info {
   text-align: justify;
   padding-left: 88px;
+}
+a {
+  text-decoration: none;
+  color: rgb(58, 58, 58);
 }
 </style>

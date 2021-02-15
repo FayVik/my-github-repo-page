@@ -41,7 +41,12 @@
           </div>
         </div>
       </div>
+      <div class="preview">
+        <button><a href="#">Pervious </a></button>
+        <button><a href="#">Next </a></button>
+      </div>
     </div>
+    <FooterPage />
   </div>
 </template>
 
@@ -49,13 +54,15 @@
 import NavBar from "./NavBar";
 import CardPage from "./CardPage";
 import Profile from "./Profile";
+import FooterPage from "./FooterPage";
 export default {
   name: "HelloWorld",
   props: {},
   components: {
     NavBar,
     CardPage,
-    Profile
+    Profile,
+    FooterPage
   }
 };
 </script>
@@ -64,7 +71,7 @@ export default {
 <style scoped>
 .container {
   width: 100%;
-  height: 88.5vh;
+  min-height: 88.5vh;
 }
 .nav-pill {
   height: 16vh;
@@ -98,7 +105,7 @@ ul li a {
 .container-content {
   display: flex;
   justify-content: start;
-  height: 72.3vh;
+  min-height: 72.3vh;
 }
 .left-side {
   width: 30%;
@@ -165,5 +172,23 @@ input {
 }
 button {
   outline: none;
+}
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 18vh;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+.preview button {
+  background: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  border: 1px solid rgb(185, 185, 185);
+}
+.preview button a {
+  color: rgb(0, 132, 255);
+  text-decoration: none;
 }
 </style>
