@@ -4,10 +4,10 @@
       <div class="container-content" v-for="datas in data" :key="datas.id">
         <div class="container-text">
           <h2>
-            <a href="#"> {{ datas.name }} </a>
+            <a :href="datas.html_url"> {{ datas.name }} </a>
           </h2>
           <span class="languages">{{ datas.language }} </span>
-          <span> {{ datas.created_at }} </span>
+          <span> {{ someDate | moment(datas.updated_at) }}</span>
         </div>
         <div class="container-button">
           <p>

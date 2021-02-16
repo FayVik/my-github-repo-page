@@ -9,6 +9,11 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
+import VueMoment from "vue-moment";
+// import moment from "moment-timezone";
+
+Vue.use(VueMoment, {});
+
 library.add(faGithub, faUserCircle, faBell, faPlus, faBars, faTimes);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
