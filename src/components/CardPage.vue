@@ -7,7 +7,7 @@
             <a :href="datas.html_url"> {{ datas.name }} </a>
           </h2>
           <span class="languages">{{ datas.language }} </span>
-          <span> {{ someDate | moment(datas.updated_at) }}</span>
+          <span> {{ moment(datas.updated_at).fromNow() }}</span>
         </div>
         <div class="container-button">
           <p>
