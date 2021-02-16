@@ -1,14 +1,13 @@
 <template>
   <div>
     <div class="container">
-      <div class="container-content">
+      <div class="container-content" v-for="datas in data" :key="datas.id">
         <div class="container-text">
           <h2>
-            <a href="#">
-              my-github-repo-page
-            </a>
+            <a href="#"> {{ datas.name }} </a>
           </h2>
-          <span>Vue </span> <span> Updated 4 hours ago </span>
+          <span class="languages">{{ datas.language }} </span>
+          <span> {{ datas.created_at }} </span>
         </div>
         <div class="container-button">
           <p>
@@ -25,7 +24,31 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "CardPage",
+  data() {
+    return {
+      data: ""
+    };
+  },
+  mounted() {
+    this.getRepo();
+  },
+  methods: {
+    async getRepo() {
+      try {
+        const response = await fetch(
+          "https://api.github.com/users/FayVik/repos"
+        );
+        const data = await response.json();
+        this.data = data;
+        console.log(this.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
+};
 </script>
 
 <style scoped>

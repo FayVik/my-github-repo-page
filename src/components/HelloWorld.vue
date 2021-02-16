@@ -35,9 +35,6 @@
           </div>
           <div class="">
             <CardPage />
-            <CardPage />
-            <CardPage />
-            <CardPage />
           </div>
         </div>
       </div>
